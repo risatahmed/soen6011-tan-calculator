@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "tan(x) CLI (python3 -m src.cli)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.cli",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "tan(x) GUI (python3 -m src.gui)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.gui",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "D2 verification suite (python3 -m tests.manual_verification_d2)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "tests.manual_verification_d2",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

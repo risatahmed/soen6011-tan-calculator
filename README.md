@@ -57,10 +57,12 @@ python3 -m src.cli     # terminal interface
 python3 -m src.gui     # Tkinter graphical interface
 ```
 
-(Module (`-m`) invocation is used, not `python3 src/cli.py` directly,
-because the modules import each other as `src.<name>` -- running as `-m`
-guarantees the repository root is on `sys.path` regardless of your current
-directory.)
+(Module (`-m`) invocation is preferred since it guarantees the repository
+root is on `sys.path` regardless of your current directory. `src/cli.py`
+and `src/gui.py` also run directly -- e.g. an IDE's "Run" button, or
+`python3 src/cli.py` -- via a small `sys.path` bootstrap at the top of each
+file. A ready-made VS Code configuration is in `.vscode/launch.json`: open
+the Run and Debug panel and pick "tan(x) CLI" / "tan(x) GUI".)
 
 ## Usage examples
 

@@ -2,12 +2,23 @@
 """Tkinter GUI for tan(x) -- Deliverable 2, Problem 5 (GUI).
 
 Run with:  python3 -m src.gui   (from the repository root)
+or open this file and press an IDE's "Run" button directly -- the sys.path
+bootstrap below makes both invocation styles work.
 
 Wireframe: docs/gui_wireframe.md. All numeric work is delegated to
 src/tan_core.py + src/validation.py; this module only wires widgets to
 those pure functions and turns exceptions into status messages -- the
 core stays importable/testable without launching a window (D2-P5.5).
 """
+
+import os
+import sys
+
+if __package__ in (None, ""):
+    # Running as a plain script (e.g. an IDE's "Run" button), not via
+    # `python3 -m src.gui` -- put the repository root on sys.path so the
+    # `from src....` imports below still resolve.
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import tkinter as tk
 from tkinter import ttk

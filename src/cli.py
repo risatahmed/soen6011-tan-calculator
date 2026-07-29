@@ -2,6 +2,8 @@
 """Textual scientific-calculator interface for tan(x) -- Deliverable 2.
 
 Run with:  python3 -m src.cli   (from the repository root)
+or open this file and press an IDE's "Run" button directly -- the sys.path
+bootstrap below makes both invocation styles work.
 
 D1's version computed sin/cos itself but still imported PI from the
 `math` module. This D2 version imports the shared from-scratch core
@@ -13,7 +15,14 @@ I/O (this module) stays separate from computation (src/tan_core.py) so the
 core can be imported and tested without a terminal.
 """
 
+import os
 import sys
+
+if __package__ in (None, ""):
+    # Running as a plain script (e.g. an IDE's "Run" button), not via
+    # `python3 -m src.cli` -- put the repository root on sys.path so the
+    # `from src....` imports below still resolve.
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.exceptions import ConvergenceError, DomainError, NumericalRangeError
 from src.tan_core import X_MAX
