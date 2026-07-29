@@ -1,0 +1,16 @@
+tan(x) calculator (Deliverable 2 -- from-scratch core, Tkinter GUI also available via 'python3 -m src.gui')
+  - Enter x as a real number.
+  - Default angle unit is RADIANS; prefix with 'd:' to enter degrees (e.g. 'd:45').
+  - Supported range: |x| <= 10000 radians (after unit conversion).
+  - Values at or within tolerance of a pole (x = pi/2 + k*pi) are rejected
+    with an explanation rather than returning a huge/meaningless number.
+  - Results are displayed to 10 significant figures.
+  - Type 'quit' or 'exit' to leave.
+
+Enter x (radians, or 'd:<value>' for degrees), or 'quit' to exit: tan(0.7853981634) = 1
+Enter x (radians, or 'd:<value>' for degrees), or 'quit' to exit: tan(0.7853981634) = 1
+Enter x (radians, or 'd:<value>' for degrees), or 'quit' to exit: Invalid input: 'abc' is not a valid real number. Please enter something like 0.7853981634 or -1.2.
+Enter x (radians, or 'd:<value>' for degrees), or 'quit' to exit: Invalid input: No input received. Please enter a numeric value for x.
+Enter x (radians, or 'd:<value>' for degrees), or 'quit' to exit: Cannot compute tan(x): x is at or within tolerance of a pole (x = pi/2 + k*pi), where cos(x) is approximately zero and tan(x) is undefined.
+Enter x (radians, or 'd:<value>' for degrees), or 'quit' to exit: Input out of range: |x| = 1e+10 exceeds the supported range |x| <= 10000 radians.
+Enter x (radians, or 'd:<value>' for degrees), or 'quit' to exit: Goodbye.
