@@ -1,0 +1,43 @@
+/* Algorithm-selection mind map — Problem 4 (Step 5)
+   Central concept: "Algorithm for tan(x)"
+   Render: dot -Tpng -Gdpi=200 algorithm_selection_mindmap.dot -o algorithm_selection_mindmap.png
+*/
+digraph AlgorithmSelectionMindMap {
+    graph [layout=neato, overlap=false, splines=curved, fontsize=20, label="Algorithm for tan(x)\n(Problem 4 — algorithm selection)", labelloc=t, fontname="Helvetica-Bold"];
+    node [fontname="Helvetica", shape=box, style="rounded,filled", fontsize=11];
+    edge [fontname="Helvetica", fontsize=9];
+
+    Center [label="Algorithm\nfor tan(x)", shape=ellipse, style="filled,bold", fillcolor="#2b6cb0", fontcolor=white, fontsize=16, width=1.8, height=0.9];
+
+    /* Criteria as thin dashed spokes for context */
+    Criteria [label="Criteria:\naccuracy - domain/pole handling\nstability near +/-pi/2 and large |x|\nimplementation effort\nfrom-scratch (D2) suitability\nperformance - explainability", shape=note, fillcolor="#edf2f7", fontsize=9];
+    Center -> Criteria [style=dashed, arrowhead=none];
+
+    /* --- Algorithm A: Maclaurin series (SELECTED for D1) --- */
+    A [label="A: Range reduction +\nMaclaurin series", fillcolor="#c6f6d5", penwidth=3, color="#22863a"];
+    A_acc [label="Accuracy: excellent\n(super-linear convergence,\n~10-15 terms for 1e-12)", fillcolor="#e6ffed", shape=note];
+    A_pole [label="Pole handling: guard on\n|cos(r)| < EPSILON\nafter series eval", fillcolor="#e6ffed", shape=note];
+    A_stab [label="Stability: good near\npoles once guarded;\nlarge |x| limited by\nPI-reduction error\n(shared with B)", fillcolor="#e6ffed", shape=note];
+    A_eff [label="Effort: LOW - direct\nseries recurrence,\nno precomputed table", fillcolor="#e6ffed", shape=note];
+    A_scratch [label="D2 from-scratch: needs\nfrom-scratch multiply\n+ divide (already no\nbuilt-in sin/cos/tan)", fillcolor="#fffbea", shape=note];
+    A_perf [label="Performance: fewer\niterations, but each term\nis a real multiply+divide", fillcolor="#e6ffed", shape=note];
+    A_expl [label="Explainability: HIGH -\n\"same Taylor series you\nlearned by hand\"", fillcolor="#e6ffed", shape=note];
+    A_choice [label="SELECTED FOR D1\nSimplest faithful\nimplementation of an\nactual algorithm today;\nrevisit trade-off in D2", fillcolor="#22863a", fontcolor=white, style="filled,bold", shape=ellipse];
+
+    Center -> A;
+    A -> A_acc; A -> A_pole; A -> A_stab; A -> A_eff; A -> A_scratch; A -> A_perf; A -> A_expl; A -> A_choice;
+
+    /* --- Algorithm B: CORDIC (rejected for D1, noted for D2) --- */
+    B [label="B: CORDIC rotation", fillcolor="#bee3f8"];
+    B_acc [label="Accuracy: good but\nlinear convergence\n(~40 iters for 1e-12)", fillcolor="#ebf8ff", shape=note];
+    B_pole [label="Pole handling: guard on\n|sin(r)| < EPSILON\n(den after N_MAX rotations)", fillcolor="#ebf8ff", shape=note];
+    B_stab [label="Stability: same shared\nreduction risk for\nlarge |x|; table precision\ncaps ultimate accuracy", fillcolor="#ebf8ff", shape=note];
+    B_eff [label="Effort: MODERATE - needs\nprecomputed arctan(2^-i)\ntable built ahead of time", fillcolor="#ebf8ff", shape=note];
+    B_scratch [label="D2 from-scratch: STRONG FIT -\nonly add/subtract/shift\nin the hot loop, no\nmultiply/divide needed", fillcolor="#fffbea", shape=note];
+    B_perf [label="Performance: more\niterations, but each is\ntrivial (shift+add)", fillcolor="#ebf8ff", shape=note];
+    B_expl [label="Explainability: MODERATE -\nneeds a vector-rotation\npicture + lookup table", fillcolor="#ebf8ff", shape=note];
+    B_reject [label="NOT SELECTED FOR D1\nStronger for D2's\nfrom-scratch constraint;\nmore setup cost today\nfor no D1 benefit", fillcolor="#b7791f", fontcolor=white, shape=ellipse];
+
+    Center -> B;
+    B -> B_acc; B -> B_pole; B -> B_stab; B -> B_eff; B -> B_scratch; B -> B_perf; B -> B_expl; B -> B_reject;
+}

@@ -1,0 +1,13 @@
+tan(x) calculator (Deliverable 1 prototype)
+  - Enter x as a real number, in RADIANS (not degrees).
+  - Supported range: |x| <= 10000 radians.
+  - Values at or within tolerance of a pole (x = pi/2 + k*pi) are rejected
+    with an explanation rather than returning a huge/meaningless number.
+  - Results are displayed to 10 significant figures.
+  - Type 'quit' or 'exit' to leave.
+
+Enter x (radians), or 'quit' to exit: tan(0.7853981634) = 1
+Enter x (radians), or 'quit' to exit: tan(-0.7853981634) = -1
+Enter x (radians), or 'quit' to exit: tan(0.5235987756) = 0.5773502692
+Enter x (radians), or 'quit' to exit: tan(1.047197551) = 1.732050808
+Enter x (radians), or 'quit' to exit: Goodbye.

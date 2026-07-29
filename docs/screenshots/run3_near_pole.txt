@@ -1,0 +1,11 @@
+tan(x) calculator (Deliverable 1 prototype)
+  - Enter x as a real number, in RADIANS (not degrees).
+  - Supported range: |x| <= 10000 radians.
+  - Values at or within tolerance of a pole (x = pi/2 + k*pi) are rejected
+    with an explanation rather than returning a huge/meaningless number.
+  - Results are displayed to 10 significant figures.
+  - Type 'quit' or 'exit' to leave.
+
+Enter x (radians), or 'quit' to exit: Cannot compute tan(x): x is at or within tolerance of a pole (x = pi/2 + k*pi), where cos(x) is approximately zero and tan(x) is undefined.
+Enter x (radians), or 'quit' to exit: Cannot compute tan(x): x is at or within tolerance of a pole (x = pi/2 + k*pi), where cos(x) is approximately zero and tan(x) is undefined.
+Enter x (radians), or 'quit' to exit: Goodbye.

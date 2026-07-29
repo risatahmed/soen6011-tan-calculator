@@ -1,0 +1,48 @@
+/* Persona-template selection mind map — Problem 1 (Step 2)
+   Central concept: "Persona Template for Tangent Function Calculator"
+   Render: dot -Tpng -Gdpi=200 persona_template_mindmap.dot -o persona_template_mindmap.png
+*/
+digraph PersonaTemplateMindMap {
+    graph [layout=neato, overlap=false, splines=curved, fontsize=20, label="Persona Template for Tangent Function Calculator\n(Problem 1 — template selection)", labelloc=t, fontname="Helvetica-Bold"];
+    node [fontname="Helvetica", shape=box, style="rounded,filled", fontsize=12];
+    edge [fontname="Helvetica", fontsize=10];
+
+    Center [label="Persona Template for\nTangent Function Calculator", shape=ellipse, style="filled,bold", fillcolor="#2b6cb0", fontcolor=white, fontsize=16, width=2.4, height=1.0];
+
+    /* --- Goal-Directed branch (SELECTED) --- */
+    GD [label="Goal-Directed\n(Cooper)", fillcolor="#c6f6d5", penwidth=3, color="#22863a"];
+    GD_adv [label="+ Strong tie to goals\n+ Drives requirement\n  traceability\n+ Filters out noise\n  (irrelevant biography)", fillcolor="#e6ffed", shape=note];
+    GD_dis [label="- Requires clear\n  task/goal analysis\n  up front", fillcolor="#ffecec", shape=note];
+    GD_choice [label="SELECTED\nBest fit: small tool,\nrequirements-driven", fillcolor="#22863a", fontcolor=white, style="filled,bold", shape=ellipse];
+
+    Center -> GD;
+    GD -> GD_adv;
+    GD -> GD_dis;
+    GD -> GD_choice;
+
+    /* --- Role-Based branch --- */
+    RB [label="Role-Based", fillcolor="#fefcbf"];
+    RB_adv [label="+ Good for multi-role\n  systems (many job\n  functions)", fillcolor="#fffff0", shape=note];
+    RB_dis [label="- Overkill: this tool\n  has one function,\n  not many roles\n- Adds ceremony without\n  added traceability", fillcolor="#ffecec", shape=note];
+    RB_reject [label="REJECTED\nToo heavy for a\nsingle-function tool", fillcolor="#b7791f", fontcolor=white, shape=ellipse];
+
+    Center -> RB;
+    RB -> RB_adv;
+    RB -> RB_dis;
+    RB -> RB_reject;
+
+    /* --- Lightweight / Proto-persona branch --- */
+    LW [label="Lightweight /\nProto-Persona", fillcolor="#bee3f8"];
+    LW_adv [label="+ Fast to produce\n+ Low overhead", fillcolor="#ebf8ff", shape=note];
+    LW_dis [label="- Thin on evidence\n- Weak traceability to\n  requirements\n- Risks generic\n  boilerplate", fillcolor="#ffecec", shape=note];
+    LW_reject [label="REJECTED\nInsufficient\ntraceability for a\ngraded requirements\ndeliverable", fillcolor="#b7791f", fontcolor=white, shape=ellipse];
+
+    Center -> LW;
+    LW -> LW_adv;
+    LW -> LW_dis;
+    LW -> LW_reject;
+
+    /* --- Evaluation criteria note --- */
+    Criteria [label="Evaluation criteria:\nrelevance to a computation tool\nrealism\nconciseness\ntraceability to requirements\naccessibility support", shape=note, fillcolor="#edf2f7", fontsize=10];
+    Center -> Criteria [style=dashed, arrowhead=none];
+}

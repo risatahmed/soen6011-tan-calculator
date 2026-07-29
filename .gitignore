@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.aux
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.synctex.gz
+.claude/settings.local.json
+
+# Submission packaging artifacts (redundant with tracked source under
+# deliverables/<Dn>/ and src/ -- not source, not committed)
+deliverables/D1/40294116.zip
+deliverables/D1/40294116/
