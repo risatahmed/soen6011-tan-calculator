@@ -1,5 +1,7 @@
 # A User-Centred, From-Scratch Scientific Calculator for tan(x)
 
+**Public repository:** https://github.com/risatahmed/soen6011-tan-calculator
+
 SOEN 6011 (Software Engineering Processes), Section CC, Summer 2026 --
 individual project (F2: tangent function). Deliverable 2 (D2): from-scratch
 numerical core, Tkinter GUI, and an updated requirements baseline built on

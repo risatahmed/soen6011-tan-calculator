@@ -73,6 +73,8 @@ This report documents Deliverable 2 (D2) of the tangent-function calculator proj
 
 Per constraint C-03, every problem below used a public GAI tool (Claude Code, Sonnet~5) with a documented prompt, output evaluation, and verification method; the full log is Appendix~\ref{sec:gai-log}.
 
+\textbf{Public repository:} \url{https://github.com/risatahmed/soen6011-tan-calculator} (verified reachable from a logged-out session; Section~\ref{sec:repo}).
+
 \section{Problem 5 --- From-Scratch Core and Tkinter GUI}
 
 \subsection{Interpreting the from-scratch boundary}
@@ -149,8 +151,11 @@ def tan(x, tolerance=SERIES_TOL, max_terms=SERIES_N_MAX,
 \end{figure}
 
 \section{Problem 6 --- Repository, Commit History, README}
+\label{sec:repo}
 
 \subsection{Repository structure}
+
+Public repository: \url{https://github.com/risatahmed/soen6011-tan-calculator} (created and pushed via \texttt{gh repo create}/\texttt{git push}; reachability confirmed with an unauthenticated \texttt{curl} request returning HTTP 200, equivalent to a logged-out browser visit).
 
 The repository root now contains \texttt{README.md}, \texttt{src/} (7 modules), \texttt{tests/} (the D2 manual verification script; the graded PyUnit suite is D3), and \texttt{docs/} (persona, requirements v0.1 \emph{and} v0.2, algorithms, decision log, GAI log, the new from-scratch boundary and GUI wireframe docs, and screenshots), matching the task list's suggested layout.
 
