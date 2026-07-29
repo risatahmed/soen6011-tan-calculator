@@ -7,6 +7,7 @@ __pycache__/
 *.toc
 *.nav
 *.snm
+*.vrb
 *.synctex.gz
 .claude/settings.local.json
 
